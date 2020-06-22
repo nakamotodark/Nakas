@@ -54,31 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (      0, uint256("2b1a0f66712aad59ad283662d5b919415a25921ce89511d73019107e380485bf"))
-    (   1000, uint256("8defd49579d63545f9e8cdda31f8503e0513328ca3f7428f33a915258c764d15"))
-    (  10000, uint256("6af2431daa7456e4620e9493091648eeaac8ddfd53d8cff8101c26806e301d9a"))
-    (  90000, uint256("a883d86273f02cb19252a878d1e0bda1e5321140480b08e3df9544d7b3d1ce56"))
-    ( 152000, uint256("4dc1a3eb7d17bab4e7f5768e927c9666ba760d6882d3b600519fdd7b83f65610"))
-    ( 200000, uint256("9260e1eb2d3851bccd2794e2c61c29af91fcd4b56ba207a4b9a5b1e79b53fb10"))
-    ( 340000, uint256("5554c0f33c36f21b79abfda9f92d1b855ed0e67b556361983af6611d75a022b3"))
-    ( 390000, uint256("1702d23f4b0f9bbcd98cc34ce90b82dbdb5d4ebf80f135284dfd709b0964f080"))
-    ( 420000, uint256("d41c1e9e2621f69aefc51e3748049f366aa6a2415968d6d2035c53410cc40305"))
-    ( 440000, uint256("3b60f85e683263783622581fbe02b5b2e59e72ccc8dc5bd6a69650d709596691"))
-    ( 445500, uint256("dbccd01f9774835e378b47a307e9d57120fed9409e511e1adc12fe097dc60695"))
-    ( 522000, uint256("18a3cb62d0a5a86c13395d970f83cd14a426e56360ecd9d7966530d9afbf1bb0"))
-    ( 588223, uint256("5374231f986b41d3745a1ee5d45b7decc65097712cb7d34429f0e1faecb8e5f4"))
-    ( 598090, uint256("b753f2a3ba8837ed9efcc9f877f33266b342006c0c8818071b48726e58d2052c"))
-    ( 635700, uint256("a90a034b2999c6a3deb69a74d60d01cf5cb78bae8cd8e29ddb4620baf6d67cce"))
-    ( 644300, uint256("c1330d826fb13968862bea2a84bd7b19f8a8cc93a83df1b2fe92bbea7050fafa"))
-    ( 695367, uint256("da25e97b5308d689197fe0d259ebb38d1087f2b113fd46a7a19a929329cb5640"))
-    ( 812197, uint256("b56a80bd01d2b11b5f102e8f1ad307e4d4b4295915032bcb1517e3027d01ae47"))
-    ( 850000, uint256("1869b6944c96e0baf683364402b118725c1ffa1eb4f78b539e2a201c4440fd9c"))
-    ( 900000, uint256("e2bace64fbce057643e49939987f40d0b9487b4e4ffe2b7852e284463a8e3521"))
-    ( 950000, uint256("3150bdf897211c60b895ebbb7884d90c7147a53a8eb413d260d54c4ca3aebc61"))
-    (1000000, uint256("a88a1ad20733dda703a73c12916c0b77e6242a71b7f88ad827aee8bd9264c652"))
-    (1062034, uint256("3f8c698163c1ba2e641da32fd7e19b394df36136411beb607db3cd6de8a76321"))
-    (1119060, uint256("58b0080c0c90a63c2add392f0c2847bed05354f023dd1a9f8d10c8c96ae4bdb5"))
-    (1426250, uint256("9bff7d1d1e68ebd1efc239569e7a92d1dc66c36c0ffc8d0afb2767cf2bb582f9"));
+    (      0, uint256(""));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -89,7 +65,7 @@ static const Checkpoints::CCheckpointData data = {
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x2b1a0f66712aad59ad283662d5b919415a25921ce89511d73019107e380485bf"));
+    boost::assign::map_list_of(0, uint256("0x"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1504595227,
@@ -97,7 +73,7 @@ static const Checkpoints::CCheckpointData dataTestnet = {
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x2b1a0f66712aad59ad283662d5b919415a25921ce89511d73019107e380485bf"));
+    boost::assign::map_list_of(0, uint256("0x"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
     1504595227,
@@ -215,7 +191,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "04659d53bd8f7ad9d34a17281febedac754e5a6eb136142d3a9c6c0ea21b6ed7498ceb3d872eed00ae755f7aeadaeb1d9ab5e1a8f1e7efcd0ddcb39d4623c12790";
-        strObfuscationPoolDummyAddress = "PCYiHgGJJ6xGHqivmdZrYjRnhaYf6AJ2Mp";
+        strObfuscationPoolDummyAddress = "";
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -308,7 +284,7 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "040d2595becca91020213bf94735fa26bb92a206aa21be45b0e95f205ff8588ecb9398c5c7d8cfaf78149d230b8dc066c3660573ff2104dac98e43283d6dc882d6";
-        strObfuscationPoolDummyAddress = "PCYiHgGJJ6xGHqivmdZrYjRnhaYf6AJ2Mp";
+        strObfuscationPoolDummyAddress = "";
         nBudgetFeeConfirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                      // here because we only have a 8 block finalization window on testnet
     }
