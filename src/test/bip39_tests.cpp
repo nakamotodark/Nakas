@@ -7,7 +7,7 @@
 #include "key.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test/test_phore.h"
+#include "test/test_nakas.h"
 #include "bip39.h"
 
 #include <boost/test/unit_test.hpp>

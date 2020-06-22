@@ -1,0 +1,26 @@
+[Unit]
+Description=Nakas's distributed currency daemon
+After=network.target
+
+[Service]
+User=nakas
+Group=nakas
+
+Type=forking
+PIDFile=/var/lib/nakasd/nakasd.pid
+
+ExecStart=/usr/bin/nakasd -daemon -pid=/var/lib/nakasd/nakasd.pid \
+          -conf=/etc/nakas/nakas.conf -datadir=/var/lib/nakasd
+
+ExecStop=-/usr/bin/nakas-cli -conf=/etc/nakas/nakas.conf \
+         -datadir=/var/lib/nakasd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

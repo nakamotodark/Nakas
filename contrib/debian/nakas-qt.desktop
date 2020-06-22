@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Nakas
+Comment=Nakas P2P Cryptocurrency
+Comment[fr]=Nakas, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Nakas, eşten eşe kriptografik sanal para birimi
+Exec=nakas-qt %u
+Terminal=false
+Type=Application
+Icon=nakas128
+MimeType=x-scheme-handler/nakas;
+Categories=Office;Finance;

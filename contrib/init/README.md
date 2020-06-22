@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: phored.service
-Upstart: phored.conf
-OpenRC:  phored.openrc
-         phored.openrcconf
-CentOS:  phored.init
+SystemD: nakasd.service
+Upstart: nakasd.conf
+OpenRC:  nakasd.openrc
+         nakasd.openrcconf
+CentOS:  nakasd.init
 
 have been made available to assist packagers in creating node packages here.
 

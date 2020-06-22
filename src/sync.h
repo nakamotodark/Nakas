@@ -250,7 +250,7 @@ public:
     }
 };
 
-/** RAII-style semaphore lock */
+/** RAII-style semanakas lock */
 class CSemaphoreGrant
 {
 private:

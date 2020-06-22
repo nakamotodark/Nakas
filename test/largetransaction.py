@@ -109,19 +109,19 @@ class Node :
 		self._nodePath = os.path.join(self._app.getRootPath(), 'node%d' % (nodeIndex))
 		self._rpcUser = 'rpcuser%d' % (nodeIndex)
 		self._rpcPassword = 'rpcpassword%d' % (nodeIndex)
-		self._phored = self._app.getPhored()
-		self._phoreCli = self._app.getPhoreCli()
+		self._nakasd = self._app.getNakasd()
+		self._nakasCli = self._app.getNakasCli()
 		self._daemonProcess = None
 
 	def createDataDir(self, nodeCount) :
 		makeDirs(self._nodePath)
 		writeFile(
-			os.path.join(self._nodePath, 'phore.conf'),
-			self._generatePhoreConf(nodeCount)
+			os.path.join(self._nodePath, 'nakas.conf'),
+			self._generateNakasConf(nodeCount)
 		)
 		
 	def startNode(self) :
-		self._daemonProcess = subprocess.Popen([ self._phored, '-datadir=' + self._nodePath, '-daemon' ])
+		self._daemonProcess = subprocess.Popen([ self._nakasd, '-datadir=' + self._nodePath, '-daemon' ])
 		
 	def stopNode(self) :
 		self.executeCli('stop')
@@ -134,7 +134,7 @@ class Node :
 		normalizedArgs = []
 		for arg in args :
 			normalizedArgs.append(str(arg))
-		output = executeCommand(self._phoreCli, '-datadir=' + self._nodePath, *normalizedArgs)
+		output = executeCommand(self._nakasCli, '-datadir=' + self._nodePath, *normalizedArgs)
 		command = ' '.join(normalizedArgs)
 		if output.find('error') >= 0 :
 			return {
@@ -163,13 +163,13 @@ class Node :
 		print('waitNodeStarting failed')
 		return False
 
-	def _generatePhoreConf(self, nodeCount) :
+	def _generateNakasConf(self, nodeCount) :
 		result = ""
 		result += "regtest=1\n"
 		result += "server=1\n"
 		result += "debug=1\n"
 		result += "debug=net\n"
-		result += "debug=phore\n"
+		result += "debug=nakas\n"
 		result += "rpcuser=%s\n" % (self._rpcUser)
 		result += "rpcpassword=%s\n" % (self._rpcPassword)
 		result += "port=%d\n" % (getNodePort(self._nodeIndex))
@@ -219,13 +219,13 @@ class Application :
 		makeDirs(self._rootPath)
 		print('Root path: %s' % (self._rootPath))
 		
-		self._phored = os.getenv('PHORED', None)
-		if not self._phored :
-			die('Undefined PHORED')
-		self._phoreCli = os.getenv('PHORECLI', None)
-		if not self._phoreCli :
-			die('Undefined PHORECLI')
-		print('phored: %s' % (self._phored))
+		self._nakasd = os.getenv('NAKASD', None)
+		if not self._nakasd :
+			die('Undefined NAKASD')
+		self._nakasCli = os.getenv('NAKASCLI', None)
+		if not self._nakasCli :
+			die('Undefined NAKASCLI')
+		print('nakasd: %s' % (self._nakasd))
 		
 		shutil.rmtree(self._rootPath)
 
@@ -406,21 +406,21 @@ class Application :
 		return False
 
 	def _makeRootPath(self) :
-		return '/tmp/testphore/'
+		return '/tmp/testnakas/'
 		return tempfile.mkdtemp(
 			suffix = None,
-			prefix = 'testphore',
+			prefix = 'testnakas',
 			dir = None
 		)
 		
 	def getRootPath(self) :
 		return self._rootPath
 		
-	def getPhored(self) :
-		return self._phored
+	def getNakasd(self) :
+		return self._nakasd
 
-	def getPhoreCli(self) :
-		return self._phoreCli
+	def getNakasCli(self) :
+		return self._nakasCli
 
 if __name__ == '__main__':
     Application().run()

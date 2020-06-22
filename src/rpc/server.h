@@ -126,7 +126,7 @@ public:
 };
 
 /**
- * Phore RPC command dispatcher.
+ * Nakas RPC command dispatcher.
  */
 class CRPCTable
 {
@@ -263,8 +263,8 @@ extern UniValue importzerocoins(const UniValue& params, bool fHelp);
 extern UniValue exportzerocoins(const UniValue& params, bool fHelp);
 extern UniValue reconsiderzerocoins(const UniValue& params, bool fHelp);
 extern UniValue getspentzerocoinamount(const UniValue& params, bool fHelp);
-extern UniValue setzphrseed(const UniValue& params, bool fHelp);
-extern UniValue getzphrseed(const UniValue& params, bool fHelp);
+extern UniValue setznakseed(const UniValue& params, bool fHelp);
+extern UniValue getznakseed(const UniValue& params, bool fHelp);
 extern UniValue makekeypair(const UniValue& params, bool fHelp);
 
 extern UniValue getrawtransaction(const UniValue& params, bool fHelp); // in rpc/rawtransaction.cpp

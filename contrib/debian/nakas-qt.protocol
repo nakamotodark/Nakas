@@ -1,0 +1,11 @@
+[Protocol]
+exec=nakas-qt '%u'
+protocol=nakas
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

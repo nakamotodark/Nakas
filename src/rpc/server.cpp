@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2019 The Phore Developers
+// Copyright (c) 2019 The Nakas Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -269,10 +269,10 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Phore server.");
+            "\nStop Nakas server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Phore server stopping";
+    return "Nakas server stopping";
 }
 
 
@@ -356,38 +356,38 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Phore features */
-        {"phore", "masternode", &masternode, true, true, false},
-        {"phore", "listmasternodes", &listmasternodes, true, true, false},
-        {"phore", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"phore", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"phore", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"phore", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"phore", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"phore", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"phore", "masternodedebug", &masternodedebug, true, true, false},
-        {"phore", "startmasternode", &startmasternode, true, true, false},
-        {"phore", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"phore", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"phore", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"phore", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"phore", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"phore", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"phore", "mnbudget", &mnbudget, true, true, false},
-        {"phore", "preparebudget", &preparebudget, true, true, false},
-        {"phore", "submitbudget", &submitbudget, true, true, false},
-        {"phore", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"phore", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"phore", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"phore", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"phore", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"phore", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"phore", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"phore", "checkbudgets", &checkbudgets, true, true, false},
-        {"phore", "mnsync", &mnsync, true, true, false},
-        {"phore", "spork", &spork, true, true, false},
-        {"phore", "getpoolinfo", &getpoolinfo, true, true, false},
-        {"phore", "makekeypair", &makekeypair, true, true, false},
+        /* Nakas features */
+        {"nakas", "masternode", &masternode, true, true, false},
+        {"nakas", "listmasternodes", &listmasternodes, true, true, false},
+        {"nakas", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"nakas", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"nakas", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"nakas", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"nakas", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"nakas", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"nakas", "masternodedebug", &masternodedebug, true, true, false},
+        {"nakas", "startmasternode", &startmasternode, true, true, false},
+        {"nakas", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"nakas", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"nakas", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"nakas", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"nakas", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"nakas", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"nakas", "mnbudget", &mnbudget, true, true, false},
+        {"nakas", "preparebudget", &preparebudget, true, true, false},
+        {"nakas", "submitbudget", &submitbudget, true, true, false},
+        {"nakas", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"nakas", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"nakas", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"nakas", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"nakas", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"nakas", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"nakas", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"nakas", "checkbudgets", &checkbudgets, true, true, false},
+        {"nakas", "mnsync", &mnsync, true, true, false},
+        {"nakas", "spork", &spork, true, true, false},
+        {"nakas", "getpoolinfo", &getpoolinfo, true, true, false},
+        {"nakas", "makekeypair", &makekeypair, true, true, false},
 #ifdef ENABLE_WALLET
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -457,8 +457,8 @@ static const CRPCCommand vRPCCommands[] =
         {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true},
         {"zerocoin", "reconsiderzerocoins", &reconsiderzerocoins, false, false, true},
         {"zerocoin", "getspentzerocoinamount", &getspentzerocoinamount, false, false, false},
-        {"zerocoin", "getzphrseed", &getzphrseed, false, false, true},
-        {"zerocoin", "setzphrseed", &setzphrseed, false, false, true}
+        {"zerocoin", "getznakseed", &getznakseed, false, false, true},
+        {"zerocoin", "setznakseed", &setznakseed, false, false, true}
 
 #endif // ENABLE_WALLET
 };
@@ -629,7 +629,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> phore-cli " + methodname + " " + args + "\n";
+    return "> nakas-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

@@ -1,0 +1,26 @@
+# /etc/conf.d/nakasd: config file for /etc/init.d/nakasd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/nakas/nakas.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/nakasd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/nakasd.pid"
+
+# Where to write nakasd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/nakasd"
+
+# User and group to own nakasd process
+#BITCOIND_USER="nakas"
+#BITCOIND_GROUP="nakas"
+
+# Path to nakasd executable
+#BITCOIND_BIN="/usr/bin/nakasd"
+
+# Nice value to run nakasd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

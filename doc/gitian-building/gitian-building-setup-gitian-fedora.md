@@ -75,13 +75,13 @@ cd ..
 
 **Note**: When sudo asks for a password, enter the password for the user `gitianuser` not for `root`.
 
-Clone the git repositories for phore and Gitian.
+Clone the git repositories for nakas and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/phore/phore
-git clone https://github.com/phoreproject/gitian.sigs.git
-git clone https://github.com/phoreproject/phore-detached-sigs.git
+git clone https://github.com/nakas/nakas
+git clone https://github.com/nakasproject/gitian.sigs.git
+git clone https://github.com/nakasproject/nakas-detached-sigs.git
 ```
 
 Setting up the Gitian image
